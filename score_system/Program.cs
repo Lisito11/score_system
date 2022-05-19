@@ -6,8 +6,9 @@ using Microsoft.Extensions.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-var dbConnection = builder.Configuration["Dbconnection"];
 
+var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
+var dbConnection = config["DBCONNECTION"];
 
 
 #region AutoMapper
@@ -56,6 +57,7 @@ if (app.Environment.IsDevelopment())
 {
 
 }
+
 
 app.UseCors("AllowOrigin");
 
