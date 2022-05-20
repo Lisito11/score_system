@@ -28,7 +28,7 @@ namespace score_system
             {
                 entity.ToTable("competitor");
 
-                entity.Property(e => e.CompetitorId)
+                entity.Property(e => e.Id)
                     .HasColumnName("competitor_id")
                     .UseIdentityAlwaysColumn();
 
@@ -54,7 +54,7 @@ namespace score_system
             {
                 entity.ToTable("events");
 
-                entity.Property(e => e.EventId)
+                entity.Property(e => e.Id)
                     .HasColumnName("event_id")
                     .UseIdentityAlwaysColumn();
 
@@ -80,7 +80,7 @@ namespace score_system
             {
                 entity.ToTable("reward");
 
-                entity.Property(e => e.RewardId)
+                entity.Property(e => e.Id)
                     .HasColumnName("reward_id")
                     .UseIdentityAlwaysColumn();
 
@@ -95,7 +95,7 @@ namespace score_system
             {
                 entity.ToTable("score");
 
-                entity.Property(e => e.ScoreId)
+                entity.Property(e => e.Id)
                     .HasColumnName("score_id")
                     .UseIdentityAlwaysColumn();
 
@@ -124,7 +124,7 @@ namespace score_system
             {
                 entity.ToTable("team");
 
-                entity.Property(e => e.TeamId)
+                entity.Property(e => e.Id)
                     .HasColumnName("team_id")
                     .UseIdentityAlwaysColumn();
 

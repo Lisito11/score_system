@@ -1,16 +1,17 @@
-﻿using System;
+﻿using score_system.Helpers;
+using System;
 using System.Collections.Generic;
 
 namespace score_system
 {
-    public partial class Competitor
+    public partial class Competitor: IId
     {
         public Competitor()
         {
             Scores = new HashSet<Score>();
         }
 
-        public int CompetitorId { get; set; }
+        public int Id { get; set; }
         public string? NameCompetitor { get; set; }
         public int? TeamId { get; set; }
         public int? Status { get; set; }

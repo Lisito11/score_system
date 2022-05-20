@@ -1,16 +1,17 @@
-﻿using System;
+﻿using score_system.Helpers;
+using System;
 using System.Collections.Generic;
 
 namespace score_system
 {
-    public partial class Reward
+    public partial class Reward : IId
     {
         public Reward()
         {
             Events = new HashSet<Event>();
         }
 
-        public int RewardId { get; set; }
+        public int Id { get; set; }
         public string? NameReward { get; set; }
         public int? Status { get; set; }
 

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using score_system;
 using Microsoft.Extensions.Configuration;
+using score_system.Repositories.EF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,14 @@ builder.Services.AddCors(c =>
 #endregion
 
 builder.Services.AddDbContext<DBScoreContext>(options => options.UseNpgsql(dbConnection));
+
+builder.Services.AddScoped<EFCompetitorRepository>();
+builder.Services.AddScoped<EFEventRepository>();
+builder.Services.AddScoped<EFRewardRepository>();
+builder.Services.AddScoped<EFTeamRepository>();
+builder.Services.AddScoped<EFScoreRepository>();
+
+
 
 var app = builder.Build();
 

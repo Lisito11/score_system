@@ -1,11 +1,12 @@
-﻿using System;
+﻿using score_system.Helpers;
+using System;
 using System.Collections.Generic;
 
 namespace score_system
 {
-    public partial class Score
+    public partial class Score : IId
     {
-        public int ScoreId { get; set; }
+        public int Id { get; set; }
         public int? CompetitorId { get; set; }
         public DateOnly? DateScore { get; set; }
         public decimal? Score1 { get; set; }
