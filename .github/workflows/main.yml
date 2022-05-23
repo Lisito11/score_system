@@ -17,6 +17,9 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
+      # Check-out the repository
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Build and deploy the Docker image
       run: |
           export DATABASE_URL=${{ env.DBCONNECTION }}
