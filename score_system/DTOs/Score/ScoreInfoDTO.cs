@@ -2,7 +2,7 @@
 {
     public class ScoreInfoDTO
     {
-        public DateOnly? DateScore { get; set; }
+        public DateTime? DateScore { get; set; }
         public decimal? Score1 { get; set; }
     }
 }
