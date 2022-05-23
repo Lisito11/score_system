@@ -13,8 +13,8 @@ namespace score_system
 
         public int Id { get; set; }
         public string? NameEvent { get; set; }
-        public DateOnly? DateStart { get; set; }
-        public DateOnly? DateEnd { get; set; }
+        public DateTime? DateStart { get; set; }
+        public DateTime? DateEnd { get; set; }
         public int? RewardId { get; set; }
         public int? Status { get; set; }
 

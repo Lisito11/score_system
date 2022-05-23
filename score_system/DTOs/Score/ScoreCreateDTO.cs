@@ -3,7 +3,7 @@
     public class ScoreCreateDTO
     {
         public int? CompetitorId { get; set; }
-        public DateOnly? DateScore { get; set; }
+        public DateTime? DateScore { get; set; }
         public decimal? Score1 { get; set; }
         public int? EventId { get; set; }
         public int? Status { get; set; }

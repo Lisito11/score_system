@@ -14,6 +14,7 @@ var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
 
 var dbConnection = Environment.GetEnvironmentVariable("DBCONNECTION");
 
+
 #region AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 #endregion
