@@ -9,8 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
-var dbConnection = config["DBCONNECTION"];
+//var dbConnection = config["DBCONNECTION"];
 
+
+var dbConnection = Environment.GetEnvironmentVariable("DBCONNECTION");
 
 #region AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -50,7 +52,7 @@ builder.Services.AddCors(c =>
 });
 #endregion
 
-builder.Services.AddDbContext<DBScoreContext>(options => options.UseNpgsql(dbConnection));
+builder.Services.AddDbContext<DBScoreContext>(options => options.UseNpgsql(dbConnection!.ToString()));
 
 builder.Services.AddScoped<EFCompetitorRepository>();
 builder.Services.AddScoped<EFEventRepository>();
