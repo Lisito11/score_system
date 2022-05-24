@@ -45,9 +45,11 @@ namespace score_system.Helpers
             // MAPPER SCORE
             CreateMap<Score, ScoreDTO>().ReverseMap();
             CreateMap<Score, ScoreInfoDTO>().ReverseMap();
+            CreateMap<Score, ScoreCompetitorInfoDTO>().ReverseMap();
 
             CreateMap<PaginationGeneric<Score>, PaginationGeneric<ScoreDTO>>().ReverseMap();
             CreateMap<PaginationGeneric<Score>, PaginationGeneric<ScoreInfoDTO>>().ReverseMap();
+            CreateMap<PaginationGeneric<Score>, PaginationGeneric<ScoreCompetitorInfoDTO>>().ReverseMap();
 
             CreateMap<ScoreCreateDTO, Score>();
 

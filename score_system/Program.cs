@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using score_system;
-using Microsoft.Extensions.Configuration;
 using score_system.Repositories.EF;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,10 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
-//var dbConnection = config["DBCONNECTION"];
+var dbConnection = config["DBCONNECTION"];
 
 
-var dbConnection = Environment.GetEnvironmentVariable("DBCONNECTION");
+//var dbConnection = Environment.GetEnvironmentVariable("DBCONNECTION");
 
 
 #region AutoMapper
@@ -53,8 +52,8 @@ builder.Services.AddCors(c =>
 });
 #endregion
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddDbContext<DBScoreContext>(options => options.UseNpgsql(dbConnection!.ToString()));
-
 builder.Services.AddScoped<EFCompetitorRepository>();
 builder.Services.AddScoped<EFEventRepository>();
 builder.Services.AddScoped<EFRewardRepository>();
