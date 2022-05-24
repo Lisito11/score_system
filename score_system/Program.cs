@@ -9,8 +9,6 @@ builder.Services.AddControllers();
 
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
 //var dbConnection = config["DBCONNECTION"];
-
-
 var dbConnection = Environment.GetEnvironmentVariable("DBCONNECTION");
 
 
